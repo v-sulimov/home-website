@@ -1,0 +1,6 @@
+# Ignore build output directory
+target/
+
+# Ignore IntelliJ IDEA related directories and files
+.idea/
+*.iml
