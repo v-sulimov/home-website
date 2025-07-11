@@ -26,9 +26,12 @@ mod tests {
         assert!(resp.status().is_success());
         let body = test::read_body(resp).await;
         let body_str = str::from_utf8(body.as_ref()).expect("Response body is not valid UTF-8");
-        assert!(body_str.contains("Vitaly Sulimov"));
+        assert!(body_str.contains("Vitaly Sulimov home on the internet."));
         assert!(body_str.contains(r#"<a href="https://git.vsulimov.com">git</a>"#));
         assert!(body_str.contains(r#"<a href="https://maven.vsulimov.com">maven</a>"#));
+        assert!(
+            body_str.contains(r#"<a href="https://mirror.vsulimov.com">mirror.vsulimov.com</a>"#)
+        );
         assert!(body_str.contains(r#"<a href="https://instagram.com/open.climb">Instagram</a>"#));
     }
 }
